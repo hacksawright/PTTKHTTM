@@ -64,3 +64,6 @@ button {
 button:hover {
     background: #1d4ed8;
 }
+
+.login-brand { display: block; color: #17694d; font-weight: 800; }
+.login-error { background: #fff3ee; color: #902c17; padding: 10px; border-radius: 6px; }

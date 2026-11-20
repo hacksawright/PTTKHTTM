@@ -1,0 +1,26 @@
+<%@ page import="util.Display,model.Member8" %>
+<%
+    String ctx = request.getContextPath();
+    Member8 activeMember = (Member8) request.getAttribute("member");
+%>
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= Display.h(request.getAttribute("title")) %> | ShopMan</title>
+<link rel="stylesheet" href="<%=ctx%>/css/shopman.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <span class="brand"><span class="brand-mark">S</span> ShopMan</span>
+        <% if (activeMember != null) { %>
+        <div class="account">
+            <span><%= Display.h(activeMember.fullname()) %></span>
+            <form action="<%=ctx%>/logout" method="post"><button class="secondary" type="submit">Đăng xuất</button></form>
+        </div>
+        <% } %>
+    </div>
+</header>
+<main class="container">
